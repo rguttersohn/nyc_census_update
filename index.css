@@ -1,0 +1,310 @@
+.blog-comment-number,
+.showTags {
+  display: none;
+}
+.blog-tags {
+  display: none;
+}
+
+.step-container {
+  width: 700px;
+  margin: auto;
+  box-sizing: content-box;
+}
+
+.step-container * {
+  font-family: sans-serif;
+  line-height: 150%;
+}
+
+.step-container p,
+strong,
+em,
+li,
+ul,
+ol,
+text,
+h3 {
+  font-size: 14px;
+}
+
+.step-container h2 {
+  font-weight: bold;
+}
+
+.step-container span {
+  font-family: sans-serif;
+  line-height: 150%;
+}
+
+.step-container section {
+  margin: 5% auto;
+  padding-bottom: 10%;
+}
+
+.step-container section:first-of-type {
+  border-top: none;
+  margin-top: 0;
+}
+
+.step-container section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.step-container section p{
+  margin:5% 0 10%;
+}
+
+
+.step-container h3 {
+  font-weight: bolder;
+  text-align: center;
+}
+
+.step-container img {
+  display: block;
+  margin: 5% auto 5% auto;
+  width: 90%;
+}
+
+.step-container .table-note {
+  font-size: 90%;
+  font-style: italic;
+  font-weight: lighter;
+  text-align: center;
+  margin:initial;
+}
+
+.map-wrapper{
+  position:relative;
+}
+
+.map-wrapper svg, .graph-wrapper svg {
+  display: block;
+  margin: auto;
+}
+
+.map-wrapper svg:active{
+  cursor: move;
+}
+.map-wrapper svg path {
+  fill: none;
+}
+
+.map-wrapper svg .ct-map path:hover {
+  stroke: white;
+  stroke-width: 1px !important;
+}
+
+.map-wrapper svg .ct-map path{
+  stroke-width: 0.5px;
+  stroke:white;
+}
+
+.map-wrapper svg .borough-map path {
+  fill: none;
+  stroke: gray;
+  stroke-width: 1px;
+  cursor: pointer;
+  transition:stroke 0.5s ease-in-out;
+}
+
+/* the hover animation is removed by removing .zoomed-out class  via javascript*/
+.map-wrapper svg .borough-map .zoomed-out:hover{
+  stroke:gainsboro;
+}
+.map-wrapper svg .boro-labels text {
+  font-family: sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  fill: #0084c0;
+  pointer-events: none;
+}
+
+/* remove mouse interaction with cd paths */
+.cd-map path{
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.cd-labels text {
+  transition: fill-opacity 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.tooltip {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  background-color: gray;
+  padding: 1%;
+  color: white;
+  width: 250px;
+  border-radius: 15px;
+  line-height: 150%;
+}
+
+.tooltip div {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid white;
+}
+
+.tooltip i {
+  display: inline-block;
+  height: 20px;
+  min-width: 20px;
+  margin-right: 2%;
+}
+
+.tooltip p,
+.tooltip span {
+  font-family: sans-serif;
+  font-weight: bold;
+  color: white;
+}
+
+.tooltip span {
+  font-size: 20px;
+}
+
+.tooltip p {
+  margin-left: calc(20px + 2%);
+  text-align: left !important;
+}
+
+.legend-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 1% auto;
+  align-items:center;
+}
+
+.legend-wrapper i,
+.legend-wrapper span {
+  margin: 0 1%;
+}
+
+.legend-wrapper span {
+  font-size: 14px;
+}
+
+.legend-wrapper i {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+}
+
+.legend-wrapper .nyc-average-icon{
+  border-left:3px dashed #6bbe7f;
+  height:40px;
+  width:0;
+}
+
+.zoom-out-icon{
+position:absolute;
+display:flex;
+justify-content: center;
+align-content: center;
+width:80px;
+height:80px;
+border-radius:50%;
+border: 1px solid #0099cd;
+background-color:rgba(255, 255, 255, 0.9);
+transition:opacity 0.5s ease-in-out;
+cursor: pointer;
+left:10px;
+}
+
+.zoom-out-icon{
+  bottom:40px;
+}
+
+.zoom-out-icon::after{
+  content:"reset";
+  text-transform: uppercase;
+  font-size:18px;
+  color:#0099cd;
+  position:relative;
+  top:33%;
+  text-align:center;
+  font-weight: bold;
+}
+
+.zoom-out-icon:hover, .zoom-out-icon:focus,.zoom-out-icon:active
+{
+  border: 2px solid #0099cd;
+}
+
+
+.graph-wrapper {
+  margin: 5% auto 5%;
+  background-color: rgb(249, 249, 249);
+  padding: 3% 1%;
+  border-radius: 5px;
+}
+
+.graph-wrapper p {
+  font-weight: bold;
+  text-align: center;
+}
+
+.neighborhood-subheader {
+  text-align:center;
+  font-weight:normal!important;
+  text-transform:uppercase;
+}
+
+
+.tract-map-image {
+  object-fit: cover;
+  object-position: center center;
+  width: 300px!important;
+  height:300px;
+  border-radius: 50%;
+  border: 3px solid #0099cd;
+}
+
+.tract-map-label{
+  position:relative;
+  bottom:150px;
+  left:370px;
+  font-weight:bold;
+  font-size:120%;
+  text-transform: uppercase;
+  margin:0;
+}
+
+/* css for the instructions on how to use the map */
+.instruction-paragraph{
+  color:#0099cd;
+  font-size:90%;
+  text-align: center;
+  margin:auto;
+  width:90%;
+  background-color:none;
+  padding:1%;
+  transition: background-color 0.5s ease-in-out
+}
+
+.instruction-paragraph-active{
+  color:white;
+  background-color:#0099cd;
+  
+}
+
+/* css for the bar chart */
+
+.bar-chart-wrapper svg rect {
+  height: 0px;
+  transition: all 2s ease;
+}
+
+.labels-2020 text {
+  transition: opacity 0.5s ease 2s;
+}
