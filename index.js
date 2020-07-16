@@ -1490,14 +1490,12 @@ const createTractComparisonChart = (data, tract_class) => {
   }
 };
 
-//run the functions
-createTractComparisonChart(manhattanCensusComparison_low, "tract_84");
-createTractComparisonChart(manhattanCensusComparison_high, "tract_275");
-createTractComparisonChart(queensCensusComparison_low, "tract_19901");
-createTractComparisonChart(queensCensusComparison_high, "tract_1291");
-createTractComparisonChart(brooklynCensusComparison_low, "tract_46");
-createTractComparisonChart(brooklynCensusComparison_high, "tract_656");
-createTractComparisonChart(statenIslandCensusComparison_low, "tract_27");
-createTractComparisonChart(statenIslandCensusComparison_high, "tract_156");
-createTractComparisonChart(bronxCensusComparison_low, "tract_398");
-createTractComparisonChart(bronxCensusComparison_high, "tract_462");
+const tractButtons = document.querySelectorAll('.tract-container img')
+tractButtons.forEach(button=>{
+  button.addEventListener("click",event=>{
+    let tractOutlierWrapper = document.querySelector('.tract-outlier-wrapper')
+    tractOutlierWrapper.classList.add(`${event.target.dataset.tract}`)
+    let inputData = event.target.dataset.data
+  createTractComparisonChart(inputData, `${event.target.dataset.tract}`)
+  })
+})

@@ -259,7 +259,40 @@ left:10px;
   font-weight:normal!important;
   text-transform:uppercase;
 }
+.tract-wrapper{
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content:space-around;
+}
 
+.tract-container {
+  margin: 3% 1%;
+}
+.tract-container img{
+  object-fit: cover;
+  object-position: center center;
+  width: 100px!important;
+  height:100px;
+  border-radius: 50%;
+  cursor:pointer;
+  border: 1px solid lightblue;
+}
+
+.tract-container span{
+  font-weight:bold;
+  text-transform: uppercase;
+  margin:0;
+  text-align: center;
+}
+
+.tract-container:hover img{
+  border: 3px solid #0099cd;
+}
+
+.tract-container-map-active{
+  border:3px solid #0099cd!important;
+}
 
 .tract-map-image {
   object-fit: cover;
