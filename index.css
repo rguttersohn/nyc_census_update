@@ -268,6 +268,9 @@ left:10px;
 
 .tract-container {
   margin: 3% 1%;
+  box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 .tract-container img{
   object-fit: cover;
@@ -286,12 +289,12 @@ left:10px;
   text-align: center;
 }
 
-.tract-container:hover img{
-  border: 3px solid #0099cd;
+.tract-container > img:hover{
+  border-bottom: 3px solid #0099cd;
 }
 
-.tract-container-map-active{
-  border:3px solid #0099cd!important;
+.tract-container-active{
+  border-bottom:3px solid #0099cd;
 }
 
 .tract-map-image {

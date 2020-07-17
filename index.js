@@ -1027,300 +1027,317 @@ Promise.all([
 
 //data
 const nyc_average = [{ average: 51.6 }];
-const manhattanCensusComparison_low = [
-  {
-    county_census_tract: "Tract 84, New York",
-    census_tract: "Tract 84",
-    response_rate: 21.5,
-  },
-  {
-    county_census_tract: "Tract 82, New York",
-    census_tract: "Tract 82",
-    response_rate: 47.6,
-  },
-  {
-    county_census_tract: "Tract 109, New York",
-    census_tract: "Tract 109",
-    response_rate: 38.4,
-  },
-  {
-    county_census_tract: "Tract 113, New York",
-    census_tract: "Tract 113",
-    response_rate: 36.3,
-  },
-  {
-    county_census_tract: "Tract 96, New York",
-    census_tract: "Tract 96",
-    response_rate: 24.6,
-  },
-  {
-    county_census_tract: "Tract 76, New York",
-    census_tract: "Tract 76",
-    response_rate: 36.7,
-  },
-];
 
-const manhattanCensusComparison_high = [
-  {
-    county_census_tract: "Tract 275, New York",
-    census_tract: "Tract 275",
-    response_rate: 72.6,
-  },
-  {
-    county_census_tract: "Tract 287, New York",
-    census_tract: "Tract 287",
-    response_rate: 63.7,
-  },
-  {
-    county_census_tract: "Tract 273, New York",
-    census_tract: "Tract 273",
-    response_rate: 71.4,
-  },
-  {
-    county_census_tract: "Tract 265, New York",
-    census_tract: "Tract 265",
-    response_rate: 63.7,
-  },
-  {
-    county_census_tract: "Tract 255, New York",
-    census_tract: "Tract 255",
-    response_rate: 61.6,
-  },
-];
-const queensCensusComparison_low = [
-  {
-    county_census_tract: "Tract 199.01, Queens",
-    census_tract: "Tract 199.01",
-    response_rate: 28.3
-  },
-  {
-    county_census_tract: "Tract 189, Queens",
-    census_tract: "Tract 189",
-    response_rate: 53.5
-  },
-  {
-    county_census_tract: "Tract 187, Queens",
-    census_tract: "Tract 187",
-    response_rate: 47.5
-  },
-  {
-    county_census_tract: "Tract 179.01, Queens",
-    census_tract: "Tract 179.01",
-    response_rate: 56.1
-  },
-  {
-    county_census_tract: "Tract 185.01, Queens",
-    census_tract: "Tract 185.01",
-    response_rate: 63.2
-  },
-  {
-    county_census_tract: "Tract 185.02, Queens",
-    census_tract: "Tract 185.02",
-    response_rate: 64.3
-  }
-]
+const censusComparisonData = {
+  manhattanCensusComparison_low: [
+    {
+      county_census_tract: "Tract 84, New York",
+      census_tract: "Tract 84",
+      response_rate: 21.5,
+    },
+    {
+      county_census_tract: "Tract 82, New York",
+      census_tract: "Tract 82",
+      response_rate: 47.6,
+    },
+    {
+      county_census_tract: "Tract 109, New York",
+      census_tract: "Tract 109",
+      response_rate: 38.4,
+    },
+    {
+      county_census_tract: "Tract 113, New York",
+      census_tract: "Tract 113",
+      response_rate: 36.3,
+    },
+    {
+      county_census_tract: "Tract 96, New York",
+      census_tract: "Tract 96",
+      response_rate: 24.6,
+    },
+    {
+      county_census_tract: "Tract 76, New York",
+      census_tract: "Tract 76",
+      response_rate: 36.7,
+    },
+  ],
 
-const queensCensusComparison_high = [
-  {
-    county_census_tract: "Tract 1291.03, Queens",
-    census_tract: "Tract 1291.03",
-    response_rate: 72.6,
-  },
-  {
-    county_census_tract: "Tract 1291.02, Queens",
-    census_tract: "Tract 1291.02",
-    response_rate: 69.6,
-  },
-  {
-    county_census_tract: "Tract 1291.04, Queens",
-    census_tract: "Tract 1291.04",
-    response_rate: 65.4,
-  },
-  {
-    county_census_tract: "Tract 1367, Queens",
-    census_tract: "Tract 1367",
-    response_rate: 67.7,
-  },
-];
+  manhattanCensusComparison_high: [
+    {
+      county_census_tract: "Tract 275, New York",
+      census_tract: "Tract 275",
+      response_rate: 72.6,
+    },
+    {
+      county_census_tract: "Tract 287, New York",
+      census_tract: "Tract 287",
+      response_rate: 63.7,
+    },
+    {
+      county_census_tract: "Tract 273, New York",
+      census_tract: "Tract 273",
+      response_rate: 71.4,
+    },
+    {
+      county_census_tract: "Tract 265, New York",
+      census_tract: "Tract 265",
+      response_rate: 63.7,
+    },
+    {
+      county_census_tract: "Tract 255, New York",
+      census_tract: "Tract 255",
+      response_rate: 61.6,
+    },
+  ],
+  queensCensusComparison_low: [
+    {
+      county_census_tract: "Tract 199.01, Queens",
+      census_tract: "Tract 199.01",
+      response_rate: 28.3,
+    },
+    {
+      county_census_tract: "Tract 189, Queens",
+      census_tract: "Tract 189",
+      response_rate: 53.5,
+    },
+    {
+      county_census_tract: "Tract 187, Queens",
+      census_tract: "Tract 187",
+      response_rate: 47.5,
+    },
+    {
+      county_census_tract: "Tract 179.01, Queens",
+      census_tract: "Tract 179.01",
+      response_rate: 56.1,
+    },
+    {
+      county_census_tract: "Tract 185.01, Queens",
+      census_tract: "Tract 185.01",
+      response_rate: 63.2,
+    },
+    {
+      county_census_tract: "Tract 185.02, Queens",
+      census_tract: "Tract 185.02",
+      response_rate: 64.3,
+    },
+  ],
 
-const brooklynCensusComparison_low = [
-  {
-    county_census_tract: "Tract 46, Kings",
-    census_tract: "Tract 46",
-    response_rate: 47.5,
-  },
-  {
-    county_census_tract: "Tract 44, Kings",
-    census_tract: "Tract 44",
-    response_rate: 64,
-  },
-  {
-    county_census_tract: "Tract 64, Kings",
-    census_tract: "Tract 64",
-    response_rate: 54.5,
-  },
-  {
-    county_census_tract: "Tract 62, Kings",
-    census_tract: "Tract 62",
-    response_rate: 56,
-  },
-];
+  queensCensusComparison_high: [
+    {
+      county_census_tract: "Tract 1291.03, Queens",
+      census_tract: "Tract 1291.03",
+      response_rate: 72.6,
+    },
+    {
+      county_census_tract: "Tract 1291.02, Queens",
+      census_tract: "Tract 1291.02",
+      response_rate: 69.6,
+    },
+    {
+      county_census_tract: "Tract 1291.04, Queens",
+      census_tract: "Tract 1291.04",
+      response_rate: 65.4,
+    },
+    {
+      county_census_tract: "Tract 1367, Queens",
+      census_tract: "Tract 1367",
+      response_rate: 67.7,
+    },
+  ],
 
-const brooklynCensusComparison_high = [
-  {
-    county_census_tract: "Tract 656, Kings",
-    census_tract: "Tract 656",
-    response_rate: 68.8,
-  },
-  {
-    county_census_tract: "Tract 654, Kings",
-    census_tract: "Tract 654",
-    response_rate: 60.6,
-  },
-  {
-    county_census_tract: "Tract 652, Kings",
-    census_tract: "Tract 652",
-    response_rate: 53.1,
-  },
-  {
-    county_census_tract: "Tract 646, Kings",
-    census_tract: "Tract 646",
-    response_rate: 53.9,
-  },
-  {
-    county_census_tract: "Tract 640, Kings",
-    census_tract: "Tract 640",
-    response_rate: 49.5,
-  },
-  {
-    county_census_tract: "Tract 636, Kings",
-    census_tract: "Tract 636",
-    response_rate: 57.1,
-  },
-];
+  brooklynCensusComparison_low: [
+    {
+      county_census_tract: "Tract 46, Kings",
+      census_tract: "Tract 46",
+      response_rate: 47.5,
+    },
+    {
+      county_census_tract: "Tract 44, Kings",
+      census_tract: "Tract 44",
+      response_rate: 64,
+    },
+    {
+      county_census_tract: "Tract 64, Kings",
+      census_tract: "Tract 64",
+      response_rate: 54.5,
+    },
+    {
+      county_census_tract: "Tract 62, Kings",
+      census_tract: "Tract 62",
+      response_rate: 56,
+    },
+  ],
 
-const statenIslandCensusComparison_low = [
-  {
-    county_census_tract: "Tract 27, Richmond",
-    census_tract: "Tract 27",
-    response_rate: 25.8,
-  },
-  {
-    county_census_tract: "Tract 21, Richmond",
-    census_tract: "Tract 21",
-    response_rate: 41.8,
-  },
-  {
-    county_census_tract: "Tract 6, Richmond",
-    census_tract: "Tract 6",
-    response_rate: 54.7,
-  },
-  {
-    county_census_tract: "Tract 29, Richmond",
-    census_tract: "Tract 29",
-    response_rate: 37.7,
-  },
-  {
-    county_census_tract: "Tract 40.01, Richmond",
-    census_tract: "Tract 40.01",
-    response_rate: 51.3,
-  },
-];
+  brooklynCensusComparison_high: [
+    {
+      county_census_tract: "Tract 656, Kings",
+      census_tract: "Tract 656",
+      response_rate: 68.8,
+    },
+    {
+      county_census_tract: "Tract 654, Kings",
+      census_tract: "Tract 654",
+      response_rate: 60.6,
+    },
+    {
+      county_census_tract: "Tract 652, Kings",
+      census_tract: "Tract 652",
+      response_rate: 53.1,
+    },
+    {
+      county_census_tract: "Tract 646, Kings",
+      census_tract: "Tract 646",
+      response_rate: 53.9,
+    },
+    {
+      county_census_tract: "Tract 640, Kings",
+      census_tract: "Tract 640",
+      response_rate: 49.5,
+    },
+    {
+      county_census_tract: "Tract 636, Kings",
+      census_tract: "Tract 636",
+      response_rate: 57.1,
+    },
+  ],
 
-const statenIslandCensusComparison_high = [
-  {
-    county_census_tract: "Tract 156.02, Richmond",
-    census_tract: "Tract 156.02",
-    response_rate: 72.6,
-  },
-  {
-    county_census_tract: "Tract 156.03, Richmond",
-    census_tract: "Tract 156.03",
-    response_rate: 56.4,
-  },
-  {
-    county_census_tract: "Tract 156.01, Richmond",
-    census_tract: "Tract 156.01",
-    response_rate: 65,
-  },
-  {
-    county_census_tract: "Tract 170.11, Richmond",
-    census_tract: "Tract 170.11",
-    response_rate: 62.1,
-  },
-  {
-    county_census_tract: "Tract 176, Richmond",
-    census_tract: "Tract 176",
-    response_rate: 57.9,
-  },
-];
+  statenIslandCensusComparison_low: [
+    {
+      county_census_tract: "Tract 27, Richmond",
+      census_tract: "Tract 27",
+      response_rate: 25.8,
+    },
+    {
+      county_census_tract: "Tract 21, Richmond",
+      census_tract: "Tract 21",
+      response_rate: 41.8,
+    },
+    {
+      county_census_tract: "Tract 6, Richmond",
+      census_tract: "Tract 6",
+      response_rate: 54.7,
+    },
+    {
+      county_census_tract: "Tract 29, Richmond",
+      census_tract: "Tract 29",
+      response_rate: 37.7,
+    },
+    {
+      county_census_tract: "Tract 40.01, Richmond",
+      census_tract: "Tract 40.01",
+      response_rate: 51.3,
+    },
+  ],
 
-const bronxCensusComparison_low = [
-  {
-    county_census_tract: "Tract 398, Bronx",
-    census_tract: "Tract 398",
-    response_rate: 35.8,
-  },
-  {
-    county_census_tract: "Tract 386, Bronx",
-    census_tract: "Tract 386",
-    response_rate: 47.4,
-  },
-  {
-    county_census_tract: "Tract 404, Bronx",
-    census_tract: "Tract 404",
-    response_rate: 39.3,
-  },
-  {
-    county_census_tract: "Tract 396, Bronx",
-    census_tract: "Tract 396",
-    response_rate: 38.7,
-  },
-  {
-    county_census_tract: "Tract 388, Bronx",
-    census_tract: "Tract 388",
-    response_rate: 39.8,
-  },
-];
+  statenIslandCensusComparison_high: [
+    {
+      county_census_tract: "Tract 156.02, Richmond",
+      census_tract: "Tract 156.02",
+      response_rate: 72.6,
+    },
+    {
+      county_census_tract: "Tract 156.03, Richmond",
+      census_tract: "Tract 156.03",
+      response_rate: 56.4,
+    },
+    {
+      county_census_tract: "Tract 156.01, Richmond",
+      census_tract: "Tract 156.01",
+      response_rate: 65,
+    },
+    {
+      county_census_tract: "Tract 170.11, Richmond",
+      census_tract: "Tract 170.11",
+      response_rate: 62.1,
+    },
+    {
+      county_census_tract: "Tract 176, Richmond",
+      census_tract: "Tract 176",
+      response_rate: 57.9,
+    },
+  ],
 
-const bronxCensusComparison_high = [
-  {
-    county_census_tract: "Tract 462.03, Bronx",
-    census_tract: "Tract 462.03",
-    response_rate: 74.2,
-  },
-  {
-    county_census_tract: "Tract 462.04, Bronx",
-    census_tract: "Tract 462.04",
-    response_rate: 74.5,
-  },
-  {
-    county_census_tract: "Tract 462.06, Bronx",
-    census_tract: "Tract 462.06",
-    response_rate: 48.6,
-  },
-  {
-    county_census_tract: "Tract 462.07, Bronx",
-    census_tract: "Tract 462.07",
-    response_rate: 59.5,
-  },
-  {
-    county_census_tract: "Tract 462.09, Bronx",
-    census_tract: "Tract 462.09",
-    response_rate: 44.3,
-  },
-];
+  bronxCensusComparison_low: [
+    {
+      county_census_tract: "Tract 398, Bronx",
+      census_tract: "Tract 398",
+      response_rate: 35.8,
+    },
+    {
+      county_census_tract: "Tract 386, Bronx",
+      census_tract: "Tract 386",
+      response_rate: 47.4,
+    },
+    {
+      county_census_tract: "Tract 404, Bronx",
+      census_tract: "Tract 404",
+      response_rate: 39.3,
+    },
+    {
+      county_census_tract: "Tract 396, Bronx",
+      census_tract: "Tract 396",
+      response_rate: 38.7,
+    },
+    {
+      county_census_tract: "Tract 388, Bronx",
+      census_tract: "Tract 388",
+      response_rate: 39.8,
+    },
+  ],
+
+  bronxCensusComparison_high: [
+    {
+      county_census_tract: "Tract 462.03, Bronx",
+      census_tract: "Tract 462.03",
+      response_rate: 74.2,
+    },
+    {
+      county_census_tract: "Tract 462.04, Bronx",
+      census_tract: "Tract 462.04",
+      response_rate: 74.5,
+    },
+    {
+      county_census_tract: "Tract 462.06, Bronx",
+      census_tract: "Tract 462.06",
+      response_rate: 48.6,
+    },
+    {
+      county_census_tract: "Tract 462.07, Bronx",
+      census_tract: "Tract 462.07",
+      response_rate: 59.5,
+    },
+    {
+      county_census_tract: "Tract 462.09, Bronx",
+      census_tract: "Tract 462.09",
+      response_rate: 44.3,
+    },
+  ],
+};
+
+const neighborhoodInfo = {
+  "tract_398":"<p>In the Bronx neighborhood between Williamsbridge and Woodlawn Cemetery (Tract 398) 18.5 percent of households lack internet access and had either no home internet subscription or dial up-only – a fifth of the population. A majority Black/Immigrant neighborhood, a large share of children also live in immigrant families and in families led by a single parent who may be completing the Census for the first time. Knowing that the 2020 Census can be completed digitally, community resources providing internet access has been severely limited due to COVID-19 and represents a major challenge to finding other means to support families to complete their 2020 Census. </p>"
+,
+'tract_462':"<p>Yet in neighborhoods that share similar undercount risks, communities such as Co-Op City have demonstrated opposite trends and represent nearly, if not, the highest response rates in New York City. Like Williamsbridge, Co-Op City has a high rate of internet inaccessibility with 1 in 5 homes without access to any internet subscription or dial-up only. The neighborhood also shares many other “at-risk” factors that lead to an undercount and would miss young children under five, yet through news, media, person-to-person engagement, community leaders, and other means – Co-Op City has demonstrated the power community mobilizing, and action has on attaining a complete count.</p>",
+"tract_84":"<p> In Manhattan, neighborhoods in Midtown consist of multiple tracts that represent some of the lowest response rates across New York City. When considering the risk of undercounting young children, it is estimated that most or ALL children in Tract 84 live in immigrant families (primarily Asian) – a circumstance which historically is associated with lower response rates on the Census in general. In 2010, this same tract had a final self-response rate more than double the current rate. However, even in 2010, only about HALF (52%) of households responded to their census and ultimately were counted in their neighborhood. Being a neighborhood that has a large immigrant population, it is important to note that approximately 52 percent of all immigrants in this tract entered the United States after the 2010 Census, making 2020 the first Census they would be completing. </p>",
+"tract_1291":"Meanwhile, Tract 1291.03 (within Oakland Gardens , Queens) has a lot more residents than tract 199.01, and a much larger percentage of them have completed their cenus forms. In this tract and it’s adjacent tracts, there is a lower share of households that have no one over the age of 14 who speaks English “very well. In addition, this tract also has a much higher degree of home ownership and 20% of residents live in or near poverty, a third of the percentage in Sunnyside. Focusing on one undercount factor, families who cannot access the form in their language, it is likely important to generate awareness and urgency about being counted by online, by phone, or on paper alongside language support and resources available from community based-organizations serving neighborhoods like Sunnyside.",
+"tract_275":"<p>Meanwhile, when looking at Census tracts in the Inwood/Washington Heights neighborhood a number of tracts that show similar risks for a undercount demonstrate a much higher response rate that has historically countered the “at risk” narrative.</p>",
+"tract_199":"<p>In Sunnyside Queens (Tract 199.01) we again see the need to support families that often undercounted or missed in the Census. In this particular neighborhood/tract nearly a third of homes are composed of adults ages 18-34 that have less than a high school diploma, 16 percent of homes have no one older than 14 years old who speaks English “very well”, all or nearly all children under 18 live in immigrant families, and a majority of the population lives in a renter-occupied housing unit. Focusing on one undercount factor, families who cannot access the form in their language, it is likely important to generate awareness and urgency about being counted by online, by phone, or on paper alongside language support and resources available from community based-organizations serving neighborhoods like Sunnyside. </p>",
+"tract_46":"<p> In Bay Ridge (Tract 46), Brooklyn has a relatively low share of renters with 19 percent of households being renter occupied compared to 81 percent of households being owner occupied. Despite a high degree of home ownership there is still a high share of multi-family housing units at about 25 percent. </p>",
+"tract_656":"<p>Meanwhile, Flatlands (Tract 656) shares a similar rate of renters to home ownership with 17 percent of households being renter occupied and 83 percent owner occupied. A more substantial difference is seen with multi-family housing units at about 8 percent with this neighborhood. We know that an important factor in low census response rates are multi-family homes that difficult to identify as separate and distinct housing units especially when concentrated.</p>",
+"tract_27":"<p>In the neighborhoods of Clifton and Stapleton in Staten Island the are several additional factors that add an increase risk and need to ensure children are counted in this and adjacent communities. Compare to previous examples mentioned, these neighborhoods also have a high share of children under five living in families experiencing poverty – representing a little more than 70 percent. More than half of all children under 18 live in a single parent household and about 18 percent of children under six live with a grandparent.</p>",
+"tract_156":"<p> Disparities seen here in comparison to communities such as Woods of Arden/Eltingville clearly demonstrate demographics that typically experience a lower Census response rate. Focusing engagement efforts in spaces (in person or remotely) where these families receive services and support provide one example of many that can increase the response rate for these communities in the Census.</p>"}
+
 
 // function that makes the charts. paramaters is the name of the data object and the class name we are adding in the html, which tells the js where to draw the chart
 const createTractComparisonChart = (data, tract_class) => {
   let max;
   if (
-    d3.max(data, (d) => {
+    d3.max(censusComparisonData[data], (d) => {
       return d.response_rate;
     }) > nyc_average[0].average
   ) {
     max =
-      d3.max(data, (d) => {
+      d3.max(censusComparisonData[data], (d) => {
         return d.response_rate;
       }) + 7;
   } else {
@@ -1335,13 +1352,13 @@ const createTractComparisonChart = (data, tract_class) => {
     .scaleBand()
     .range([0, height - 400])
     .domain(
-      data.map((d) => {
+      censusComparisonData[data].map((d) => {
         return d.census_tract;
       })
     );
 
-  let comparisonChart = d3
-    .select(`.tract-outlier-wrapper.${tract_class} svg`)
+ let comparisonChart = d3
+    .select(`.tract-outlier-wrapper div.${tract_class} svg`)
     .attr("width", width + margin.left + margin.right + 60)
     .attr("height", height - 400 + margin.top);
 
@@ -1368,7 +1385,7 @@ const createTractComparisonChart = (data, tract_class) => {
     .append("g")
     .attr("class", "lines")
     .selectAll("line")
-    .data(data)
+    .data(censusComparisonData[data])
     .enter()
     .append("line")
     .attr("x1", (d) => {
@@ -1390,7 +1407,7 @@ const createTractComparisonChart = (data, tract_class) => {
     .append("g")
     .attr("class", `${tract_class}-circles`)
     .selectAll("circle")
-    .data(data)
+    .data(censusComparisonData[data])
     .enter()
     .append("circle")
     .attr("cx", (d) => {
@@ -1411,7 +1428,7 @@ const createTractComparisonChart = (data, tract_class) => {
     .append("g")
     .attr("class", `${tract_class}-labels`)
     .selectAll("text")
-    .data(data)
+    .data(censusComparisonData[data])
     .enter()
     .append("text")
     .text((d) => {
@@ -1478,7 +1495,6 @@ const createTractComparisonChart = (data, tract_class) => {
   }
 
   //adding colors to the legend
-
   let legendIcons = document.querySelectorAll(
     `.${tract_class} .legend-wrapper i`
   );
@@ -1490,12 +1506,35 @@ const createTractComparisonChart = (data, tract_class) => {
   }
 };
 
-const tractButtons = document.querySelectorAll('.tract-container img')
-tractButtons.forEach(button=>{
-  button.addEventListener("click",event=>{
-    let tractOutlierWrapper = document.querySelector('.tract-outlier-wrapper')
-    tractOutlierWrapper.classList.add(`${event.target.dataset.tract}`)
-    let inputData = event.target.dataset.data
-  createTractComparisonChart(inputData, `${event.target.dataset.tract}`)
-  })
-})
+//initial state of the tract highlight section
+let tractOutlierGraph = document.querySelector(".tract-outlier-wrapper div")
+    let tractMapImage = document.querySelector('.tract-map-image')
+    
+    let tractWrapper= document.querySelector('.tract-wrapper')
+    
+    let neighborhoodSubheader= document.querySelector('.neighborhood-subheader');
+    let tractInfo = document.querySelector('.tract-info')
+    
+    tractMapImage.src="https://www.cccnewyork.org/wp-content/uploads/2020/07/ct398.png"
+
+    neighborhoodSubheader.textContent = "Williamsbridge"
+    tractInfo.innerHTML = neighborhoodInfo['tract_398']
+    
+
+const tractButtons = document.querySelectorAll(".tract-container img");
+tractButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    let removeOldGraph = d3.selectAll(".tract-outlier-wrapper div svg *").remove();
+    let tractActive = tractWrapper.querySelector('.tract-container-active');
+    if(tractActive){
+      tractActive.classList.remove('tract-container-active')
+    }
+    neighborhoodSubheader.textContent = event.target.nextElementSibling.textContent
+    event.target.parentNode.classList.add('tract-container-active')
+    tractInfo.innerHTML = neighborhoodInfo[event.target.dataset.tract]
+    tractOutlierGraph.className = event.target.dataset.tract;
+    createTractComparisonChart(event.target.dataset.data,`${event.target.dataset.tract}`);
+    tractMapImage.src=event.target.getAttribute('src')
+  });
+});
+
