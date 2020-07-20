@@ -279,6 +279,8 @@ margin:3% auto;
   margin:0;
   text-align: center;
   background-color:white;
+  color:black;
+  font-size:14px;
   border:1px solid lightblue;
   padding:1.2%;
   border-radius:5px;
@@ -345,4 +347,40 @@ margin:3% auto;
 
 .labels-2020 text {
   transition: opacity 0.5s ease 2s;
+}
+
+
+@media screen and (max-width: 800px) {
+  .step-container p {
+    font-size: 22px;
+  }
+  .step-container h2,
+  .step-container h3 {
+    font-size: 30px;
+  }
+ 
+
+  .step-container ul li,
+  .step-container ol li {
+    font-size: 22px;
+    line-height: 120%;
+  }
+
+  .step-container .aside div {
+    float: none;
+    width: 100%;
+    margin: 3% auto;
+  }
+
+  .step-container .aside div img {
+    display: none;
+  }
+
+  .step-container .aside div p {
+    text-align: center;
+  }
+
+  section h2 {
+    font-size: 200%;
+  }
 }
