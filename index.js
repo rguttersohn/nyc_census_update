@@ -1,3 +1,12 @@
+let wrappers = d3.selectAll('.graph-wrapper svg.needs-loading-wheel')
+
+let loadingWheel = wrappers.append('circle')
+.attr('cx','50%')
+.attr('cy','50%')
+.attr('r','50px')
+.attr('class','loading-wheel');
+
+
 //apis and external json files
 const censusTractMapURL = fetch("./nyc_tracts2020_clipped.json");
 const responseRateURLBrooklyn = fetch(
@@ -112,6 +121,12 @@ Promise.all([
       queens2010AllData,
       nycdMapData,
     ]) => {
+
+      //remove loading animation
+
+      loadingWheel.remove()
+
+      //begin map design
       nycMap = topojson.feature(nycCensuTractMapData, {
         type: "GeometryCollection",
         geometries:
@@ -993,7 +1008,7 @@ Promise.all([
         legendIcon[0].style.backgroundColor = colors[0];
         legendIcon[1].style.backgroundColor = colors[3];
 
-        //intersection obvserver
+        //intersection obvserver that animates the bar chart
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {

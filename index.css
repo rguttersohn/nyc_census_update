@@ -1,3 +1,26 @@
+.loading-wheel {
+  fill: none;
+  stroke-width: 10px;
+  stroke: gainsboro;
+  stroke-dasharray: 10px;
+  animation-name: turn-wheel;
+  animation-timing-function: linear;
+  animation-fill-mode: fowards;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  transform-origin: center;
+  border-radius:50%;
+}
+
+@keyframes turn-wheel {
+  0% {
+    transform: rotate(0deg);
+  }
+  100%{
+    transform:rotate(360deg)
+  }
+}
+
 .blog-comment-number,
 .showTags {
   display: none;
@@ -52,10 +75,9 @@ h3 {
   margin-bottom: 0;
 }
 
-.step-container section p{
-  margin:5% 0 10%;
+.step-container section p {
+  margin: 5% 0 10%;
 }
-
 
 .step-container h3 {
   font-weight: bolder;
@@ -73,19 +95,20 @@ h3 {
   font-style: italic;
   font-weight: lighter;
   text-align: center;
-  margin:initial;
+  margin: initial;
 }
 
-.map-wrapper{
-  position:relative;
+.map-wrapper {
+  position: relative;
 }
 
-.map-wrapper svg, .graph-wrapper svg {
+.map-wrapper svg,
+.graph-wrapper svg {
   display: block;
   margin: auto;
 }
 
-.map-wrapper svg:active{
+.map-wrapper svg:active {
   cursor: move;
 }
 .map-wrapper svg path {
@@ -97,9 +120,9 @@ h3 {
   stroke-width: 1px !important;
 }
 
-.map-wrapper svg .ct-map path{
+.map-wrapper svg .ct-map path {
   stroke-width: 0.5px;
-  stroke:white;
+  stroke: white;
 }
 
 .map-wrapper svg .borough-map path {
@@ -107,12 +130,12 @@ h3 {
   stroke: gray;
   stroke-width: 1px;
   cursor: pointer;
-  transition:stroke 0.5s ease-in-out;
+  transition: stroke 0.5s ease-in-out;
 }
 
 /* the hover animation is removed by removing .zoomed-out class  via javascript*/
-.map-wrapper svg .borough-map .zoomed-out:hover{
-  stroke:gainsboro;
+.map-wrapper svg .borough-map .zoomed-out:hover {
+  stroke: gainsboro;
 }
 .map-wrapper svg .boro-labels text {
   font-family: sans-serif;
@@ -126,7 +149,7 @@ h3 {
 }
 
 /* remove mouse interaction with cd paths */
-.cd-map path{
+.cd-map path {
   transition: opacity 0.5s ease-in-out;
   pointer-events: none;
 }
@@ -182,7 +205,7 @@ h3 {
   display: flex;
   justify-content: center;
   margin: 1% auto;
-  align-items:center;
+  align-items: center;
 }
 
 .legend-wrapper i,
@@ -200,47 +223,47 @@ h3 {
   height: 15px;
 }
 
-.legend-wrapper .nyc-average-icon{
-  border-left:3px dashed #6bbe7f;
-  height:40px;
-  width:0;
+.legend-wrapper .nyc-average-icon {
+  border-left: 3px dashed #6bbe7f;
+  height: 40px;
+  width: 0;
 }
 
-.zoom-out-icon{
-position:absolute;
-display:flex;
-justify-content: center;
-align-content: center;
-width:80px;
-height:80px;
-border-radius:50%;
-border: 1px solid #0099cd;
-background-color:rgba(255, 255, 255, 0.9);
-transition:opacity 0.5s ease-in-out;
-cursor: pointer;
-left:10px;
+.zoom-out-icon {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid #0099cd;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: opacity 0.5s ease-in-out;
+  cursor: pointer;
+  left: 10px;
 }
 
-.zoom-out-icon{
-  bottom:40px;
+.zoom-out-icon {
+  bottom: 40px;
 }
 
-.zoom-out-icon::after{
-  content:"reset";
+.zoom-out-icon::after {
+  content: "reset";
   text-transform: uppercase;
-  font-size:18px;
-  color:#0099cd;
-  position:relative;
-  top:33%;
-  text-align:center;
+  font-size: 18px;
+  color: #0099cd;
+  position: relative;
+  top: 33%;
+  text-align: center;
   font-weight: bold;
 }
 
-.zoom-out-icon:hover, .zoom-out-icon:focus,.zoom-out-icon:active
-{
+.zoom-out-icon:hover,
+.zoom-out-icon:focus,
+.zoom-out-icon:active {
   border: 2px solid #0099cd;
 }
-
 
 .graph-wrapper {
   margin: 5% auto 5%;
@@ -255,92 +278,93 @@ left:10px;
 }
 
 .neighborhood-subheader {
-  text-align:center;
-  font-weight:normal!important;
-  text-transform:uppercase;
+  text-align: center;
+  font-weight: normal !important;
+  text-transform: uppercase;
 }
 
-.tract-highlight-wrapper{
-background-color:rgb(249, 249, 249);
-padding:1%;
-border-radius:5px;
-margin:3% auto;
+.tract-highlight-wrapper {
+  background-color: rgb(249, 249, 249);
+  padding: 1%;
+  border-radius: 5px;
+  margin: 3% auto;
 }
-.tract-wrapper{
-  display:flex;
+.tract-wrapper {
+  display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
-  justify-content:space-around;
+  justify-content: space-around;
 }
 
-.tract-button{
-  font-weight:bold;
+.tract-button {
+  font-weight: bold;
   text-transform: uppercase;
-  margin:0.5% 0;
+  margin: 0.5% 0;
   text-align: center;
-  background-color:white;
-  color:black;
-  font-size:14px;
-  border:1px solid lightblue;
-  padding:1.2%;
-  border-radius:5px;
-  cursor:pointer;
+  background-color: white;
+  color: black;
+  font-size: 14px;
+  border: 1px solid lightblue;
+  padding: 1.2%;
+  border-radius: 5px;
+  cursor: pointer;
   width: 190px;
   height: 60px;
   box-sizing: border-box;
 }
-.tract-button::before,.tract-button::after{
+.tract-button::before,
+.tract-button::after {
   box-sizing: border-box;
 }
 
-.tract-button:hover, tract-button:active, tract-button:focus{
+.tract-button:hover,
+tract-button:active,
+tract-button:focus {
   border-bottom: 3px solid #0099cd;
-  background-color:white;
-  color:black;
+  background-color: white;
+  color: black;
 }
 
-.tract-button-active{
-  border-bottom:3px solid #0099cd;
-  background-color:white;
-  color:black;
+.tract-button-active {
+  border-bottom: 3px solid #0099cd;
+  background-color: white;
+  color: black;
 }
 
 .tract-map-image {
   object-fit: cover;
   object-position: center center;
-  width: 300px!important;
-  height:300px;
+  width: 300px !important;
+  height: 300px;
   border-radius: 50%;
   border: 3px solid #0099cd;
 }
 
-.tract-map-label{
-  position:relative;
-  bottom:150px;
-  left:370px;
-  font-weight:bold;
-  font-size:120%;
+.tract-map-label {
+  position: relative;
+  bottom: 150px;
+  left: 370px;
+  font-weight: bold;
+  font-size: 120%;
   text-transform: uppercase;
-  margin:0;
+  margin: 0;
 }
-
 
 /* css for the instructions on how to use the map */
-.instruction-paragraph{
-  color:#0099cd;
-  font-size:90%;
+.instruction-paragraph {
+  color: #0099cd;
+  font-size: 90%;
   text-align: center;
-  margin:auto;
-  width:90%;
-  background-color:none;
-  padding:1%;
-  transition: background-color 0.5s ease-in-out
+  margin: auto;
+  width: 90%;
+  background-color: none;
+  padding: 1%;
+  transition: background-color 0.5s ease-in-out;
 }
 
-.instruction-paragraph-active{
-  color:white;
-  background-color:#0099cd;
-  
+.instruction-paragraph-active {
+  color: white;
+  background-color: #0099cd;
 }
 
 /* css for the bar chart */
@@ -354,7 +378,6 @@ margin:3% auto;
   transition: opacity 0.5s ease 2s;
 }
 
-
 @media screen and (max-width: 800px) {
   .step-container p {
     font-size: 22px;
@@ -363,7 +386,6 @@ margin:3% auto;
   .step-container h3 {
     font-size: 30px;
   }
- 
 
   .step-container ul li,
   .step-container ol li {
