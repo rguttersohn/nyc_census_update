@@ -1390,22 +1390,34 @@ const createTractComparisonChart = (data, tract_class) => {
 
 //initial state of the tract highlight section
 let tractOutlierGraph = document.querySelector(".tract-outlier-wrapper div")
+const tractButtons = document.querySelectorAll(".tract-wrapper button")
+let renderContainer = document.querySelector('.render-container')
+let tractMapImage = document.querySelector('.tract-map-image')
+let tractWrapper= document.querySelector('.tract-wrapper')
+let neighborhoodSubheader= document.querySelector('.neighborhood-subheader');
+let tractInfo = document.querySelector('.tract-info')
+let tractMapLabel = document.querySelector('.tract-map-label')
+let graphTitle = document.querySelector('.tract-outlier-wrapper h3')
 
-const tractButtons = document.querySelectorAll(".tract-wrapper button");
+
+tractOutlierGraph.className = tractButtons[0].dataset.tract;
+createTractComparisonChart(tractButtons[0].dataset.data,tractButtons[0].dataset.tract)
+tractButtons[0].classList.add('tract-button-active')
+graphTitle.textContent = `${tractButtons[0].dataset.tnaName} (${tractButtons[0].dataset.tract.replace(/_/g," ")}) compared to adjacent tracts`
+tractMapImage.src=tractButtons[0].dataset.src
+tractMapLabel.textContent = tractButtons[0].dataset.tract.replace(/_/g," ")
+neighborhoodSubheader.textContent = tractButtons[0].dataset.tnaName
+tractInfo.innerHTML = neighborhoodInfo[tractButtons[0].dataset.tract]
+
+// now we add the event for reactive rendering
 tractButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
-    let renderContainer = document.querySelector('.render-container')
-    let tractMapImage = document.querySelector('.tract-map-image')
-    let tractWrapper= document.querySelector('.tract-wrapper')
-    let neighborhoodSubheader= document.querySelector('.neighborhood-subheader');
-    let tractInfo = document.querySelector('.tract-info')
-    let tractMapLabel = document.querySelector('.tract-map-label')
-    let graphTitle = document.querySelector('.tract-outlier-wrapper h3')
+    
     let removeOldGraph = d3.selectAll(".tract-outlier-wrapper div svg *").remove();
     let tractActive = tractWrapper.querySelector('.tract-button-active');
-    let parsedString = event.target.dataset.tract.replace(/_|-/g, " ")
+    let parsedString = event.target.dataset.tract.replace(/_/g, " ")
   
-    graphTitle.textContent =`${event.target.dataset.tnaName} (${event.target.dataset.tract.replace(/_|-/g," ")}) compared to adjacent tracts`
+    graphTitle.textContent =`${event.target.dataset.tnaName} (${event.target.dataset.tract.replace(/_/g," ")}) compared to adjacent tracts`
     if(tractActive){
       tractActive.classList.remove('tract-button-active')
     }

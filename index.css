@@ -276,7 +276,7 @@ margin:3% auto;
 .tract-button{
   font-weight:bold;
   text-transform: uppercase;
-  margin:0;
+  margin:0.5% 0;
   text-align: center;
   background-color:white;
   color:black;
@@ -285,14 +285,24 @@ margin:3% auto;
   padding:1.2%;
   border-radius:5px;
   cursor:pointer;
+  width: 190px;
+  height: 60px;
+  box-sizing: border-box;
+}
+.tract-button::before,.tract-button::after{
+  box-sizing: border-box;
 }
 
-.tract-button:hover{
+.tract-button:hover, tract-button:active, tract-button:focus{
   border-bottom: 3px solid #0099cd;
+  background-color:white;
+  color:black;
 }
 
 .tract-button-active{
   border-bottom:3px solid #0099cd;
+  background-color:white;
+  color:black;
 }
 
 .tract-map-image {
@@ -314,11 +324,6 @@ margin:3% auto;
   margin:0;
 }
 
-.render-container{
-  max-height: 20px;
-  overflow: hidden;
-  transition: max-height 0.3s ease-in-out
-}
 
 /* css for the instructions on how to use the map */
 .instruction-paragraph{
