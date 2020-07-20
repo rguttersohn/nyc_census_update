@@ -1034,7 +1034,7 @@ const censusComparisonData = {
       county_census_tract: "Tract 275, New York",
       census_tract: "Tract 275",
       response_rate: 74.7,
-      nta_name: "Washington Heights North"
+
     },
     {
       county_census_tract: "Tract 287, New York",
@@ -1062,7 +1062,6 @@ const censusComparisonData = {
       county_census_tract: "Tract 199.01, Queens",
       census_tract: "Tract 199.01",
       response_rate: 29.1,
-      nta_name: ""
     },
     {
       county_census_tract: "Tract 189, Queens",
@@ -1095,7 +1094,6 @@ const censusComparisonData = {
       county_census_tract: "Tract 46, Kings",
       census_tract: "Tract 46",
       response_rate: 49.2,
-      nta_name: ""
     },
     {
       county_census_tract: "Tract 44, Kings",
@@ -1118,7 +1116,6 @@ const censusComparisonData = {
       county_census_tract: "Tract 27, Richmond",
       census_tract: "Tract 27",
       response_rate: 27.6,
-      nta_name: ""
     },
     {
       county_census_tract: "Tract 21, Richmond",
@@ -1146,7 +1143,6 @@ const censusComparisonData = {
       county_census_tract: "Tract 398, Bronx",
       census_tract: "Tract 398",
       response_rate: 37.6,
-      nta_name: ""
     },
     {
       county_census_tract: "Tract 386, Bronx",
@@ -1175,7 +1171,6 @@ const censusComparisonData = {
       county_census_tract: "Tract 462.03, Bronx",
       census_tract: "Tract 462.03",
       response_rate: 75.7,
-      nta_name: ""
     },
     {
       county_census_tract: "Tract 462.04, Bronx",
@@ -1201,17 +1196,22 @@ const censusComparisonData = {
 };
 
 const neighborhoodInfo = {
-  "tract_398":"<p>In the Bronx neighborhood of Williamsbridge-Olinville and it’s surrounding tracts, census response rates lag behind citywide progress. In the Bronx tract between Williamsbridge and Woodlawn Cemetery (Tract 398), 18.5 percent of households lack internet access and had either no home internet subscription or dial up-only – a fifth of the population. A majority Black/Immigrant neighborhood, a large share of children also live in immigrant families and in families led by a single parent who may be completing the Census for the first time. Knowing that the 2020 Census can be completed digitally, community resources providing internet access has been severely limited due to COVID-19 and represents a major challenge to finding other means to support families to complete their 2020 Census.</p>"
+  "tract_398":"<p>In the Bronx neighborhood of Williamsbridge-Olinville and it’s surrounding tracts, census response rates lag behind citywide progress. In the Bronx tract between Williamsbridge and Woodlawn Cemetery (Tract 398), 18.5 percent of households &mdash; or about a fifth of the population &mdash; lack internet access and had either no home internet subscription or dial up-only. A majority Black/Immigrant neighborhood, a large share of children also live in immigrant families and in families led by a single parent who may be completing the Census for the first time.</p> <p>Knowing that the 2020 Census can be completed digitally, community resources providing internet access has been severely limited due to COVID-19 and represents a major challenge to finding other means to support families to complete their 2020 Census.</p>"
 ,
-'tract_462':"<p>In neighborhoods that share similar undercount risks, communities such as Co-Op City have demonstrated opposite trends and represent nearly, if not, the highest response rates in New York City. Like Williamsbridge, Co-Op City has a high rate of internet inaccessibility with 1 in 5 homes without access to any internet subscription or dial-up only. The neighborhood also shares many other “at-risk” factors that lead to an undercount and would miss young children under five, yet through news, media, person-to-person engagement, community leaders, and other means &mdash; <a href='https://www.thecity.nyc/coronavirus/2020/5/19/21270835/co-op-city-succeeds-with-census-while-much-of-nyc-struggles-what-s-its-secret' target='_blank'>Co-Op City has demonstrated</a> the power community mobilizing, and action has on attaining a complete count.</p>",
-"tract_275":"<p>When considering the risk of undercounting young children, living in immigrant families represent another type of circumstance associated with lower response rates on the Census in general. Of then these include reasons such as lack of access/awareness about the Census in the language they speak, fear or mistrust of providing information to government, and having unique living situations such as renting a room or a basement and being missed because they do not have their own mailbox. Looking to Census tracts in the Washington Heights North neighborhood in upper Manhattan, several tracts that show similar risks for an undercount, yet demonstrate a much higher response rate that has historically countered the <a href='https://www.thecity.nyc/government/2019/8/16/21210859/counting-on-old-uptown-playbook-for-citywide-census-success' target='_blank'>“at risk” narrative</a>. In fact, tract 275 and it’s surrounding tracts represent some of the highest census response rates in the city, and has already surpassed it’s 2010 response rate, a testament to the value and effectiveness of on the ground census mobilization efforts that includes the immigrant community.</p>",
-"tract_199":"<p>For our Queens spotlight, we look at tracts in the neighborhood of Hunters Point-Sunnyside-West Maspeth (Tract 199.01) and their respective neighborhood demographics focusing on households that have limited English proficiency or no one in the home over the age of 14 who speaks English “very well”. As a borough Queens is one of if not the most diverse geography in the world with hundreds of languages spoken in the Borough.  In the case of this tract, around 16 percent of homes do not have anyone over the age of 14 who speaks English “very well”. While the 2020 Census does provide support in several languages, not all languages are covered. Even with languages that re support, tailored outreach efforts to families that speak and read languages other than English are key to generate awareness and urgency about being counted by online, by phone, or on paper; often through community based-organizations serving neighborhoods like Sunnyside.</p>",
-"tract_46":"<p> Bay Ridge, Brooklyn and their adjacent tracts, are the focus of our Brooklyn response rate spotlight. In Bay Ridge, tract 46 has a response rate below 50%, among a strip of tracts with census tracts whose response rates are higher or increasing at a quicker pace. A look at the estimated demographics of census tract 46 as compared to the surrounding Brooklyn tracts, reveals how the concentration of hard-to-count characteristics often/sometimes overlap with lower census response rates. In this case, certain household characteristics are associated with higher census response rates, such as owner-occupied households, single-family homes, and households in small cities and towns. The housing demographics in Bay Ridge (tract 46) reflect neighborhoods that are primarily owner-occupied with approximately 80% of households, as compared to other parts of the city which have a higher proportion of renters. However, multifamily units make up nearly a third of households in Bay Ridge. These multi-family units may be difficult to identify as separate and distinct housing units especially when concentrated.</p>",
-"tract_27":"<p>In the neighborhoods of Stapleton-Rosebank in Staten Island the are several additional factors that add an increase risk and need to ensure children are counted in this and adjacent communities. Compare to previous barriers mentioned, these neighborhoods also have a high share of children under five living in families experiencing poverty – representing a little more than 70 percent. More than half of all children under 18 live in a single parent household and about 18 percent of children under six live with a grandparent. All these representing other situations that can lead to families and young children being missed in the Census. While the approach may look different in each community, focusing engagement efforts in spaces (in person or remotely) where these families receive services and support provide one example of many that can increase the response rate for these communities in the Census. </p>",
+'tract_462':"<p>Some communities such as Co-Op City that were considered at-risk for being undercounted have demonstrated opposite trends and represent nearly, if not, the highest response rates in New York City.</p><p>Like Williamsbridge, Co-Op City has a high rate of internet inaccessibility. 1 in 5 homes are without access to any internet subscription or dial-up only. The neighborhood also shares many other “at-risk” factors that lead to an undercount and would miss young children under five, yet through news, media, person-to-person engagement, community leaders, and other means &mdash; <a href='https://www.thecity.nyc/coronavirus/2020/5/19/21270835/co-op-city-succeeds-with-census-while-much-of-nyc-struggles-what-s-its-secret' target='_blank'>Co-Op City has demonstrated</a> the power community mobilizing, and action has on attaining a complete count.</p>",
+"tract_275":"<p>When considering the risk of undercounting young children, living in immigrant families represent another type of circumstance associated with lower response rates on the Census in general. The reasons include lack of access/awareness about the Census in the language they speak, fear or mistrust of providing information to government, and having unique living situations such as renting a room or a basement and being missed because they do not have their own mailbox.</p><p>In the neighborhood of Washington Heights in upper Manhattan, several tracts there have similar risks for an undercount. However response rate there have historically countered the <a href='https://www.thecity.nyc/government/2019/8/16/21210859/counting-on-old-uptown-playbook-for-citywide-census-success' target='_blank'>“at risk” narrative</a>. In fact, Washington Heights Norths (tract 275) and it’s surrounding tracts represent some of the highest census response rates in the city and has already surpassed it’s 2010 response rate. This is a testament to the value and effectiveness of on-the-ground census mobilization efforts that includes the immigrant community.</p>",
+"tract_199":"<p>As a borough, Queens is one of the most diverse geographic regions in the world with hundreds of languages spoken in the Borough. The neighborhood of Hunters Point-Sunnyside-West Maspeth (Tract 199.01) is a microcosm of the borough. There, around 16 percent of homes do not have anyone over the age of 14 who speaks English “very well”. While the 2020 Census does provide support in several languages, not all languages are covered. Even with languages that are supported, tailored outreach efforts to families that speak and read languages other than English are key to generate awareness and urgency about being counted &mdash whether online, phone, or on paper.</p>",
+"tract_46":"<p>Tract 46 in the western part of Bay Ridge has a response rate below 50% but is surrounded by tracts where response rates are higher or increasing at a quicker pace. A look at the estimated demographics of census tract 46 as compared to the surrounding Brooklyn tracts reveals how the concentration of hard-to-count characteristics often/sometimes overlap with lower census response rates.<p></p>In this case, certain household characteristics are associated with higher census response rates, such as owner-occupied households, single-family homes, and households in small cities and towns. The housing demographics in Bay Ridge (tract 46) reflect neighborhoods that are primarily owner-occupied with approximately 80% of households, as compared to other parts of the city which have a higher proportion of renters. However, multifamily units make up nearly a third of households in Bay Ridge. These multi-family units may be difficult to identify as separate and distinct housing units especially when concentrated.</p>",
+"tract_27":"<p>In the neighborhoods of Stapleton-Rosebank in Staten Island there are several additional factors that add an increase risk and need to ensure children are counted in this and adjacent communities. Compare to previous barriers mentioned, these neighborhoods also have a high share of children under five living in families experiencing poverty – representing a little more than 70 percent. More than half of all children under 18 live in a single parent household and about 18 percent of children under six live with a grandparent. All these representing other situations that can lead to families and young children being missed in the Census. While the approach may look different in each community, focusing engagement efforts in spaces (in person or remotely) where these families receive services and support provide one example of many that can increase the response rate for these communities in the Census. </p>",
 }
+
+
+
 
 // function that makes the charts. paramaters is the name of the data object and the class name we are adding in the html, which tells the js where to draw the chart
 const createTractComparisonChart = (data, tract_class) => {
+
+ 
   let max;
   if (
     d3.max(censusComparisonData[data], (d) => {
@@ -1390,36 +1390,33 @@ const createTractComparisonChart = (data, tract_class) => {
 
 //initial state of the tract highlight section
 let tractOutlierGraph = document.querySelector(".tract-outlier-wrapper div")
-    let tractMapImage = document.querySelector('.tract-map-image')
-    
-    let tractWrapper= document.querySelector('.tract-wrapper')
-    
-    let neighborhoodSubheader= document.querySelector('.neighborhood-subheader');
-    let tractInfo = document.querySelector('.tract-info')
-    let tractMapLabel = document.querySelector('.tract-map-label')
-    
-    tractMapImage.src="https://www.cccnewyork.org/wp-content/uploads/2020/07/ct398.png"
-    neighborhoodSubheader.textContent = "Williamsbridge"
-    tractInfo.innerHTML = neighborhoodInfo['tract_398']
-    tractMapLabel.innerHTML = "tract398"
-
 
 const tractButtons = document.querySelectorAll(".tract-wrapper button");
 tractButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
+    let renderContainer = document.querySelector('.render-container')
+    let tractMapImage = document.querySelector('.tract-map-image')
+    let tractWrapper= document.querySelector('.tract-wrapper')
+    let neighborhoodSubheader= document.querySelector('.neighborhood-subheader');
+    let tractInfo = document.querySelector('.tract-info')
+    let tractMapLabel = document.querySelector('.tract-map-label')
+    let graphTitle = document.querySelector('.tract-outlier-wrapper h3')
     let removeOldGraph = d3.selectAll(".tract-outlier-wrapper div svg *").remove();
     let tractActive = tractWrapper.querySelector('.tract-button-active');
     let parsedString = event.target.dataset.tract.replace(/_|-/g, " ")
+  
+    graphTitle.textContent =`${event.target.dataset.tnaName} (${event.target.dataset.tract.replace(/_|-/g," ")}) compared to adjacent tracts`
     if(tractActive){
       tractActive.classList.remove('tract-button-active')
     }
-    neighborhoodSubheader.textContent = event.target.textContent
+    neighborhoodSubheader.textContent = event.target.dataset.tnaName
     event.target.classList.add('tract-button-active')
     tractInfo.innerHTML = neighborhoodInfo[event.target.dataset.tract]
     tractOutlierGraph.className = event.target.dataset.tract;
     createTractComparisonChart(event.target.dataset.data,`${event.target.dataset.tract}`);
     tractMapImage.src=event.target.dataset.src
     tractMapLabel.innerHTML = parsedString
+    renderContainer.style.maxHeight = renderContainer.scrollHeight + 'px'
   });
 });
 

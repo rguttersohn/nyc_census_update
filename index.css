@@ -259,6 +259,13 @@ left:10px;
   font-weight:normal!important;
   text-transform:uppercase;
 }
+
+.tract-highlight-wrapper{
+background-color:rgb(249, 249, 249);
+padding:1%;
+border-radius:5px;
+margin:3% auto;
+}
 .tract-wrapper{
   display:flex;
   flex-wrap: wrap;
@@ -303,6 +310,12 @@ left:10px;
   font-size:120%;
   text-transform: uppercase;
   margin:0;
+}
+
+.render-container{
+  max-height: 20px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out
 }
 
 /* css for the instructions on how to use the map */

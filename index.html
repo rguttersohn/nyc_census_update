@@ -83,14 +83,17 @@
         corresponding <a href="https://www1.nyc.gov/site/planning/data-maps/nyc-population/geographic-reference.page" target="_blank">Neighborhood Tabulation Area (NTA) name</a>.
       </p>
 
-      <p class="table-note">Tap a tract below to learn more</p>
+      
+      <div class="tract-highlight-wrapper">
+        <p class="table-note">Tap a tract below to learn more</p>
       <div class="tract-wrapper">
         <button
-          class="tract-button tract-button-active"
+          class="tract-button"
           class="tract-button-map-active"
           data-tract="tract_398"
           data-data="bronxCensusComparison_low"
           data-src="https://www.cccnewyork.org/wp-content/uploads/2020/07/ct398.png"
+          data-tna-name="Williamsbridge-Olinville"
         >
           Williamsbridge
         </button>
@@ -99,6 +102,7 @@
           data-tract="tract_462"
           data-data="bronxCensusComparison_high"
           data-src="https://www.cccnewyork.org/wp-content/uploads/2020/07/ct46203.png"
+          data-tna-name="Co-op City"
         >
           Coop City
         </button>
@@ -107,6 +111,7 @@
           data-tract="tract_275"
           data-data="manhattanCensusComparison_high"
           data-src="https://www.cccnewyork.org/wp-content/uploads/2020/07/ct275.png"
+          data-tna-name="Washington Heights North"
         >
           Washington Heights/Inwood
         </button>
@@ -115,6 +120,7 @@
           data-tract="tract_199"
           data-data="queensCensusComparison_low"
           data-src="https://www.cccnewyork.org/wp-content/uploads/2020/07/ct19901.png"
+          data-tna-name="Sunnyside"
         >
           Sunnyside
         </button>
@@ -122,7 +128,8 @@
           class="tract-button"
           data-tract="tract_46"
           data-data="brooklynCensusComparison_low"
-          data-src="https://www.cccnewyork.org/wp-content/uploads/2020/07/ct46.png"
+          data-src="https://www.cccnewyork.org/wp-content/uploads/2020/07/ct46.png" 
+          data-tna-name="Bay Ridge"
         >
           Bay Ridge
         </button>
@@ -131,12 +138,13 @@
           data-tract="tract_27"
           data-data="statenIslandCensusComparison_low"
           data-src="https://www.cccnewyork.org/wp-content/uploads/2020/07/ct27.png"
+          data-tna-name="Stapleton-Rosebank"
         >
           St. George
         </button>
       </div>
       <!-- rendering container  -->
-      <div>
+      <div class='render-container'>
         <img class="tract-map-image" />
         <span class="tract-map-label"></span>
         <h2 class="neighborhood-subheader"></h2>
@@ -154,6 +162,7 @@
             </div>
           </div>
         </div>
+      </div>
       </div>
       <!-- ending paragraphs -->
       <p>
