@@ -369,11 +369,6 @@ tract-button:focus {
 
 /* css for the bar chart */
 
-.bar-chart-wrapper svg rect {
-  height: 0px;
-  transition: all 2s ease;
-}
-
 .labels-2020 text {
   transition: opacity 0.5s ease 2s;
 }
