@@ -76,6 +76,7 @@ const margin = { bottom: 50, top: 50, left: 10, right: 10 };
 const colors = ["#ea0029", "#ff9b8e", "#9dbfe0", "#0084c0"];
 const noDataColor = "#c8ebce";
 
+
 const nycdMapURL = fetch("./nycd.json");
 Promise.all([
   censusTractMapURL,
@@ -430,13 +431,9 @@ Promise.all([
         bronx2010AllData,
         queens2010AllData
       );
-      //consolide the 2020 borough data
-      let twentyConsolidedData = statenIslandAllData.concat(
-        brooklynAllData,
-        manhattanAllData,
-        bronxAllData,
-        queensAllData
-      );
+   
+
+
       //this function removes the odd indices
       const removeOddArrays = (array) => {
         for (i = 0; i < array.length; i++) {
@@ -445,7 +442,8 @@ Promise.all([
       };
       //now we run both the 2010 and 2020 array through the function to strip out the odd indices
       removeOddArrays(tenConsolidatedData);
-      removeOddArrays(twentyConsolidedData);
+   
+
 
       //ny cd numbers with names
       const responseRateMap = () => {
@@ -837,10 +835,12 @@ Promise.all([
 
         // legend colors
 
-        let legendIcons = document.querySelectorAll(".legend-wrapper i");
+        let legendIcons = document.querySelectorAll(".map-wrapper .legend-wrapper i");
         for (let i = 0; i < legendIcons.length; i++) {
           legendIcons[i].style.backgroundColor = colors[i];
         }
+
+
 
         //selecting the zoom in and zoom out icons
         let zoomOutIcon = document.querySelector(".zoom-out-icon");
@@ -868,6 +868,27 @@ Promise.all([
           xDomain.push(tenConsolidatedData[i][3]);
         }
 
+      const fixedData_2020 =[{
+        borough: "Staten Island",
+        response_rate:58.4,
+      },
+      {
+        borough: "Brooklyn",
+        response_rate:50.6,
+      },
+      {
+        borough: "Manhattan",
+        response_rate:55,
+      },
+      {
+        borough: "Bronx",
+        response_rate:54.7
+      },
+      {
+        borough: "Queens",
+        response_rate:53.4,
+      }]
+
         //bar chart height
 
         const barChartHeight = height - 300;
@@ -877,6 +898,10 @@ Promise.all([
           .range([0, width])
           .domain(xDomain)
           .padding(0.5);
+
+        const fixedXScale = d3.scaleBand().range([0,width])
+        .domain(fixedData_2020.map(d=>d.borough))
+        .padding(0.5)
 
         const yScale = d3
           .scaleLinear()
@@ -935,14 +960,14 @@ Promise.all([
           .append("g")
           .attr("class", "bars bars-2020")
           .selectAll("rect")
-          .data(twentyConsolidedData)
+          .data(fixedData_2020)
           .enter()
           .append("rect")
           .attr("x", (d) => {
-            return xScale(d[8]) + 25;
+            return fixedXScale(d.borough) + 25;
           })
           .attr("width", (d) => {
-            return xScale.bandwidth() / 1.2;
+            return fixedXScale.bandwidth() / 1.2;
           })
           .attr("transform", `translate(${margin.left + 30},${margin.bottom})`)
           .attr("y", height - 310)
@@ -954,17 +979,17 @@ Promise.all([
           .append("g")
           .attr("class", "labels-2020")
           .selectAll("text")
-          .data(twentyConsolidedData)
+          .data(fixedData_2020)
           .enter()
           .append("text")
           .text((d) => {
-            return d[2] + "%";
+            return d.response_rate + "%";
           })
           .attr("x", (d) => {
-            return xScale(d[8]) + xScale.bandwidth() / 1.2 + 42;
+            return fixedXScale(d.borough) + fixedXScale.bandwidth() / 1.2 + 42;
           })
           .attr("y", (d) => {
-            return yScale(d[2]);
+            return yScale(d.response_rate);
           })
           .attr("dy", "15%")
           .attr("text-anchor", "middle")
@@ -1008,6 +1033,7 @@ Promise.all([
         legendIcon[0].style.backgroundColor = colors[0];
         legendIcon[1].style.backgroundColor = colors[3];
 
+
         //intersection obvserver that animates the bar chart
         const observer = new IntersectionObserver(
           (entries) => {
@@ -1016,9 +1042,9 @@ Promise.all([
                 d3.selectAll(".bars-2020 rect")
                   .transition()
                   .duration(2000)
-                  .attr("height", (d) => barChartHeight - yScale(d[2]) + "px")
+                  .attr("height", (d) => barChartHeight - yScale(d.response_rate) + "px")
                   .attr("y", (d) => {
-                    return yScale(d[2]) + "px";
+                    return yScale(d.response_rate) + "px";
                   });
 
                 d3.selectAll(".labels-2020 text").style("opacity", 1);
@@ -1028,6 +1054,7 @@ Promise.all([
           { threshold: 0.7 }
         );
         observer.observe(document.querySelector(".bar-chart-wrapper"));
+      
         // end of function
       };
 
@@ -1076,35 +1103,31 @@ const censusComparisonData = {
   ],
   queensCensusComparison_low: [
     {
-      county_census_tract: "Tract 199.01, Queens",
-      census_tract: "Tract 199.01",
-      response_rate: 29.1,
+      county_census_tract: "Tract 415, Queens",
+      census_tract: "Tract 415",
+      response_rate: 39.4,
     },
     {
-      county_census_tract: "Tract 189, Queens",
-      census_tract: "Tract 189",
-      response_rate: 55.5,
+      county_census_tract: "Tract 413, Queens",
+      census_tract: "Tract 413",
+      response_rate: 40.2,
     },
     {
-      county_census_tract: "Tract 187, Queens",
-      census_tract: "Tract 187",
-      response_rate: 48.7,
+      county_census_tract: "Tract 411, Queens",
+      census_tract: "Tract 411",
+      response_rate: 34.4,
     },
     {
-      county_census_tract: "Tract 179.01, Queens",
-      census_tract: "Tract 179.01",
-      response_rate: 58.5,
+      county_census_tract: "Tract 427, Queens",
+      census_tract: "Tract 427",
+      response_rate: 41.6,
     },
     {
-      county_census_tract: "Tract 185.01, Queens",
-      census_tract: "Tract 185.01",
-      response_rate: 64.9,
+      county_census_tract: "Tract 439, Queens",
+      census_tract: "Tract 439",
+      response_rate: 36.8,
     },
-    {
-      county_census_tract: "Tract 185.02, Queens",
-      census_tract: "Tract 185.02",
-      response_rate: 66.6,
-    },
+
   ],
   brooklynCensusComparison_low: [
     {
@@ -1216,8 +1239,8 @@ const neighborhoodInfo = {
   "tract_398":"<p>In the Bronx neighborhood of Williamsbridge-Olinville and it’s surrounding tracts, Census response rates lag behind the citywide average. In the Bronx tract between Williamsbridge and Woodlawn Cemetery (Tract 398), 18.5 percent of households &mdash; or about a fifth of the population &mdash; lack internet access and had either no home internet subscription or dial up-only. A majority Black/Immigrant neighborhood, a large share of children also live in immigrant families and in families led by a single parent who may be completing the Census for the first time.</p> <p>Knowing that the 2020 Census can be completed digitally, community resources providing internet access has been severely limited due to COVID-19 and represents a major challenge to finding other means to support families to complete their 2020 Census.</p>"
 ,
 'tract_462':"<p>Some communities such as Co-Op City that were considered at-risk for being undercounted have demonstrated opposite trends and represent nearly, if not, the highest response rates in New York City.</p><p>Like Williamsbridge, Co-Op City has a high rate of internet inaccessibility. 1 in 5 homes are without access to any internet subscription or dial-up only. The neighborhood also shares many other “at-risk” factors that lead to an undercount and would miss young children under five. Yet through news, media, person-to-person engagement, community leaders, and other means &mdash; <a href='https://www.thecity.nyc/coronavirus/2020/5/19/21270835/co-op-city-succeeds-with-census-while-much-of-nyc-struggles-what-s-its-secret' target='_blank'>Co-Op City has demonstrated</a> the power community mobilizing and action has on attaining a complete count.</p>",
-"tract_275":"<p>When considering the risk of undercounting young children, living in immigrant families represent another type of circumstance associated with lower response rates on the Census in general. The reasons include lack of access/awareness about the Census in the language they speak, fear or mistrust of providing information to government, and having unique living situations such as renting a room or a basement and being missed because they do not have their own mailbox.</p><p>In the neighborhood of Washington Heights in upper Manhattan, several tracts there have similar risks for an undercount. However response rate there have historically countered the <a href='https://www.thecity.nyc/government/2019/8/16/21210859/counting-on-old-uptown-playbook-for-citywide-census-success' target='_blank'>“at risk” narrative</a>. In fact, Washington Heights Norths (tract 275) and it’s surrounding tracts represent some of the highest Census response rates in the city and has already surpassed it’s 2010 response rate. This is a testament to the value and effectiveness of on-the-ground Census mobilization efforts that includes the immigrant community.</p>",
-"tract_199":"<p>As a borough, Queens is one of the most diverse geographic regions in the world with hundreds of languages spoken in the Borough. The neighborhood of Hunters Point-Sunnyside-West Maspeth (Tract 199.01) is a microcosm of the borough. There, around 16 percent of homes do not have anyone over the age of 14 who speaks English “very well”. While the 2020 Census does provide support in several languages, not all languages are covered. Even with languages that are supported, tailored outreach efforts to families that speak and read languages other than English are key to generate awareness and urgency about being counted &mdash; whether online, by phone, or by paper.</p>",
+"tract_275":"<p>gWhen considering the risk of undercounting young children, living in immigrant families represent another type of circumstance associated with lower response rates on the Census in general. The reasons include lack of access/awareness about the Census in the language they speak, fear or mistrust of providing information to government, and having unique living situations such as renting a room or a basement and being missed because they do not have their own mailbox.</p><p>In the neighborhood of Washington Heights in upper Manhattan, several tracts there have similar risks for an undercount. However response rate there have historically countered the <a href='https://www.thecity.nyc/government/2019/8/16/21210859/counting-on-old-uptown-playbook-for-citywide-census-success' target='_blank'>“at risk” narrative</a>. In fact, Washington Heights Norths (tract 275) and it’s surrounding tracts represent some of the highest Census response rates in the city and has already surpassed it’s 2010 response rate. This is a testament to the value and effectiveness of on-the-ground Census mobilization efforts that includes the immigrant community.</p>",
+"tract_415":" <p>Queens is one of the most diverse geographic regions in the world with hundreds of languages spoken in the borough. The community of Corona is a testament to this diversity, where nearly two thirds of the population hail from outside the United States. However, this richness in culture remains unseen on the Decennial Census, because nearly every census tract in the district has a response rate under 50%. In fact, ALL of the tracts in Corona are currently in the bottom 20% response rates in the country.</p> <p> Tract 415 and the adjacent tracts are categorized by a high density of households where no one above the age of 14 speaks english 'very well,' also known as limited english proficiency. This demographic makes up 46% of residents in tract 415 alone, or an estimated 482 households. While the 2020 Census does provide support in several languages, not all languages are covered. Even with languages that are supported, tailored outreach efforts to families that speak and read languages other than English are key to generate awareness and urgency about being counted - whether online, by phone, or by paper.</p>",
 "tract_46":"<p>Tract 46 in the western part of Bay Ridge has a response rate below 50%. However, it is surrounded by tracts where response rates are higher or increasing at a quicker pace. A look at the estimated demographics of census tract 46 as compared to the surrounding Brooklyn tracts reveals how the concentration of hard-to-count characteristics often/sometimes overlap with lower Census response rates.</p><p>In this case, certain household characteristics are associated with higher Census response rates, such as owner-occupied households, single-family homes, and households in small cities and towns. Approximately 80 percent of households in tract 46 are owner-occupied, which is higher than the city average. However, multifamily units make up nearly a third of households in Bay Ridge. These multi-family units may be difficult to identify as separate and distinct housing units especially when concentrated.</p>",
 "tract_27":"<p>In the neighborhoods of Stapleton-Rosebank in the North Shore of Staten Island there are several additional factors that increase the need to ensure children are counted in this and adjacent communities. Compared to previous barriers mentioned in other tracts in this section, these neighborhoods also have a high share of children under five living in families experiencing poverty &mdash; representing a little more than 70 percent. More than half of all children under 18 live in a single parent household and about 18 percent of children under six live with a grandparent. These are all factors that can lead to families and young children being missed in the Census. While the approach may look different in each community, focusing engagement efforts in spaces (in person or remotely) where these families receive services and support provide one example of many that can increase the response rate for these communities in the Census.</p>",
 }
